@@ -1,0 +1,92 @@
+.pokemon-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  animation: fadeIn 0.5s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow);
+}
+
+.pokemon-card:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.pokemon-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-body {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: var(--text);
+}
+
+.favorite-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--glass-bg);
+  color: var(--text);
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.favorite-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.favorite-btn:hover::before {
+  left: 100%;
+}
+
+.favorite-btn.add:hover {
+  background: var(--accent);
+}
+
+.favorite-btn.remove {
+  background: #ff4d4d;
+  color: white;
+}
+
+.favorite-btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .pokemon-card {
+    width: 100%;
+  }
+}

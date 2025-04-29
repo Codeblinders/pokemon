@@ -1,0 +1,13 @@
+.filter-dropdown select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 150px;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-dropdown select {
+      width: 100%;
+    }
+  }
