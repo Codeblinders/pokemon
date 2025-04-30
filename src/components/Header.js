@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ isDarkMode, toggleDarkMode }) => (
+const Header = ({ toggleDarkMode }) => (
   <header className="header">
     <Link to="/" className="header-brand">Pokédex</Link>
     <nav className="header-nav">
@@ -13,7 +13,6 @@ const Header = ({ isDarkMode, toggleDarkMode }) => (
       <input
         type="checkbox"
         id="dark-mode-switch"
-        checked={isDarkMode}
         onChange={toggleDarkMode}
       />
       <label htmlFor="dark-mode-switch">Dark Mode</label>
