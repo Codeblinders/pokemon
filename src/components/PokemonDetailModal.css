@@ -1,94 +1,165 @@
-/* PokemonDetailModal.css */
+body{
 
-.modal-content {
-  background-color: var(--primary);
-  color: var(--text);
-  border-radius: 15px;
-  overflow: hidden;
-}
+  
+  background :linear-gradient(135deg,rgb(114, 191, 215),rgba(77, 123, 197, 0.416),rgb(178, 122, 195));
 
-.modal-header {
-  background: var(--card-bg);
-  border-bottom: 2px solid var(--accent);
-}
-
-.modal-footer {
-  border-top: 2px solid var(--accent);
-}
-
-.close {
-  color: var(--text);
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.close:hover {
-  opacity: 1;
 }
 
 .pokemon-image-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin:1rem;
+  background:linear-gradient(105deg,rgb(4, 4, 79),rgb(44, 3, 84),rgb(64, 1, 1));
+  animation: move 6s ease infinite;
+  border-radius: 16px;
+  padding: 20px;
+
+}
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.pokemon-image {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
+
+.modal-neauer {
+  max-width: 700px;
+  margin: 50px auto;
+  background-color: #c60d0d;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.types-section {
-  margin-bottom: 1rem;
-}
-
-.type-badge {
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+/* Header */
+.modal-title.h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
   font-weight: bold;
+  color: #043362;
+}
+
+/* Close Button */
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Pokémon Image */
+.pokemon-image-container {
+  text-align: center;
+}
+.pokemon-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+/* Sections Headings */
+.types-section h5,
+.abilities-section h5,
+.stats-section h5 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+/* Type Badges */
+.type-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  color: white;
+  background-color: #6c5ce7;
   text-transform: capitalize;
 }
 
-.abilities-section {
-  margin-bottom: 1rem;
-}
-
+/* Abilities List */
 .abilities-section ul {
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
-
 .abilities-section li {
-  margin-bottom: 0.5rem;
+  padding: 5px 0;
+  font-size: 0.95rem;
+  color: #2d3436;
 }
 
-.stats-section {
-  margin-bottom: 1rem;
-}
-
+/* Stats Table */
 .stats-table {
   width: 100%;
+  font-size: 0.95rem;
+}
+.stats-table td {
+  padding: 8px 12px;
 }
 
-.stats-table td {
-  padding: 0.5rem;
+/* Footer Buttons */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .button-d {
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.button-d.btn-primary {
+  background-color: #0984e3;
+  border: none;
+  color: white;
+}
+.button-d.btn-primary:hover {
+  background-color: #74b9ff;
+}
+.button-d.btn-secondary {
+  background-color: #636e72;
+  border: none;
+  color: white;
+}
+.button-d.btn-secondary:hover {
+  background-color: #b2bec3;
 }
 
-@media (max-width: 768px) {
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .modal-neauer {
+    margin: 20px;
+    padding: 15px;
+  }
   .pokemon-image {
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
+  }
+  .modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button-d {
+    width: 100%;
   }
 }
