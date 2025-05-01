@@ -1,92 +1,48 @@
 .pokemon-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
-  animation: fadeIn 0.5s ease;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
 }
 
 .pokemon-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--glass-shadow);
-}
-
-.pokemon-card:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  transform: scale(1.05);
 }
 
 .pokemon-image {
   width: 100%;
-  height: 150px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.pokemon-card:hover .pokemon-image {
-  transform: scale(1.1) rotate(5deg);
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .card-body {
-  text-align: center;
-  padding: 1rem 0;
+  margin-top: 10px;
 }
 
 .card-title {
-  margin: 0;
-  font-size: 1.2rem;
-  text-transform: capitalize;
-  color: var(--text);
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fffcfc;
+  margin-bottom: 10px;
 }
 
 .favorite-btn {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 5px 10px;
   border: none;
-  border-radius: 25px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: var(--glass-bg);
-  color: var(--text);
-  position: relative;
-  /* overflow: hidden; */
+  font-size: 0.9em;
 }
 
-.favorite-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: 0.5s;
-}
-
-.favorite-btn:hover::before {
-  left: 100%;
-}
-
-.favorite-btn.add:hover {
-  background: var(--accent);
-}
-
-.favorite-btn.remove {
-  background: #ff4d4d;
+.favorite-btn.add {
+  background-color: #4CAF50;
   color: white;
 }
 
-.favorite-btn:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-@media (max-width: 480px) {
-  .pokemon-card {
-    width: 100%;
-  }
+.favorite-btn.remove {
+  background-color: #f44336;
+  color: white;
 }
