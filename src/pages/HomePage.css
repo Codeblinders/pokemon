@@ -1,7 +1,7 @@
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 1rem;
   width: 100%;
 }
@@ -28,8 +28,8 @@
 }
 
 .pokemon-card:hover {
-  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+  box-shadow: 0 25px 40px rgba(74, 58, 58, 0.2);
 }
 
 .pokemon-card::before {
