@@ -1,9 +1,17 @@
+// PokemonCard.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PokemonCard.css';
 
-function PokemonCard({ pokemon, isFavorite, toggleFavorite, onCardClick }) {
+function PokemonCard({ pokemon, isFavorite, toggleFavorite }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/pokemon/${pokemon.id}`, { state: { pokemon } });
+  };
+
   return (
-    <div className="pokemon-card" onClick={onCardClick ? () => onCardClick(pokemon) : undefined}>
+    <div className="pokemon-card" onClick={handleCardClick}>
       <img
         src={pokemon.sprites.front_default}
         alt={pokemon.name}
