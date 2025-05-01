@@ -14,6 +14,7 @@ const Header = ({ toggleDarkMode }) => (
         type="checkbox"
         id="dark-mode-switch"
         onChange={toggleDarkMode}
+        checked={isDarkMode}  
       />
       <label htmlFor="dark-mode-switch">Dark Mode</label>
     </div>
