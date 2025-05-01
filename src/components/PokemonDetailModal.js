@@ -7,9 +7,9 @@ const PokemonDetailModal = ({ show, onHide, pokemon, isFavorite, toggleFavorite 
 
   return (
     <Modal show={show} onHide={onHide} centered size="lg">
-      <Modal.Header closeButton>
+      <Modal.Header >
         <Modal.Title>
-          {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} #{pokemon.id.toString().padStart(3, '0')}
+          {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}@{pokemon.id.toString().padStart(3, '0')}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -41,7 +41,7 @@ const PokemonDetailModal = ({ show, onHide, pokemon, isFavorite, toggleFavorite 
 
         <div className="stats-section">
           <h5>Base Stats</h5>
-          <Table striped bordered hover className="stats-table">
+          <Table  className="stats-table">
             <tbody>
               {pokemon.stats.map((s, idx) => (
                 <tr key={idx}>
