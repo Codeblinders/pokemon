@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ toggleDarkMode }) => (
+const Header = ({ isDarkMode,toggleDarkMode }) => (
   <header className="header">
     <Link to="/" className="header-brand">Pokédex</Link>
     <nav className="header-nav">
