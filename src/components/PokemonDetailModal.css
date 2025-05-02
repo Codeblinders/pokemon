@@ -14,7 +14,6 @@
 .modal-content {
   max-width: 700px;
   width: 90%;
-  background-color: white;
   border-radius: 16px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -176,4 +175,13 @@
   .button-d {
     width: 100%;
   }
+}
+
+[data-theme='dark'] .modal-content{
+  background:linear-gradient(linear-gradient(135deg, rgb(42 3 33), #111432, #10073e)) ;
+  color: white;
+}
+[data-theme='light'] .modal-content{
+ background: linear-gradient(135deg, rgba(114, 191, 215, 0.9), rgba(77, 123, 197, 0.7), rgba(178, 122, 195, 0.9));
+ color: rgb(22, 30, 245);
 }
