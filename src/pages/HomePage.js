@@ -15,7 +15,7 @@ const HomePage = ({ allPokemon, loading, error, favorites, toggleFavorite, isDar
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 20;
 
   useEffect(() => {
     let filtered = allPokemon;
