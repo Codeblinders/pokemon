@@ -4,8 +4,8 @@ import axios from 'axios';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import FavoritesPage from './pages/FavoritesPage';
-import PokemonDetailPage from './components/PokemonDetailPage'; // import it
-
+import PokemonDetailPage from './components/PokemonDetailPage'; 
+import ComparisonPage from './pages/ComparisonPage';
 import './App.css';
 
 function App() {
@@ -86,6 +86,16 @@ function App() {
             toggleFavorite={toggleFavorite}
             isDarkMode={isDarkMode}
           />} 
+        />
+        <Route
+          path="/compare"
+          element={
+            <ComparisonPage
+              favorites={favorites}
+              toggleFavorite={toggleFavorite}
+              isDarkMode={isDarkMode}
+            />
+          }
         />
 
 <Route path="/" element={<HomePage />} />
