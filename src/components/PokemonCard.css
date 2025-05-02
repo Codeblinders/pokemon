@@ -1,0 +1,53 @@
+.pokemon-card {
+  padding: 10px;
+  background: linear-gradient(135deg,blue,red);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  opacity: 0.8;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.1);
+  opacity:1;
+
+}
+
+.pokemon-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: linear-gradient(270deg, #9eb7bc, transparent);
+}
+
+.card-body {
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #504387;
+  margin-bottom: 10px;
+}
+
+.favorite-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.favorite-btn.add {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.favorite-btn.remove {
+  background-color: #f44336;
+  color: white;
+}

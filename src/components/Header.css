@@ -1,0 +1,152 @@
+/* Header.css */
+:root {
+  --header-bg: linear-gradient(135deg, #061c58 0%, #0f3d5e 100%);
+  --text-primary: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--header-bg);
+  position: relative;
+  z-index: 1000;
+  gap: 2rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.header-nav a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 70px);
+    background: var(--header-bg);
+    flex-direction: column;
+    padding: 1rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .header-nav.active {
+    right: 0;
+  }
+
+  .header-nav a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header-controls {
+    gap: 1rem;
+  }
+}
+
+
+.header-brand {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #0e9d9a, #4747a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.header-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+}
+
+.header-toggle label {
+  cursor: pointer;
+}
+
+.header-toggle input[type="checkbox"] {
+  width: 50px;
+  height: 26px;
+  background: #031c28;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  appearance: none;
+}
+
+.header-toggle input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s ease;
+}
+
+.header-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(22px);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+
+  .header-brand {
+    font-size: 1.5rem;
+  }
+
+  .header-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .header-toggle label {
+    display: none;
+  }
+}
