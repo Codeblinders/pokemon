@@ -1,0 +1,202 @@
+:root {
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --accent: #6c5ce7;
+  --text-primary: #dce3e5;
+  --bg-gradient: linear-gradient(135deg, #5f52ad 0%, #6bcad1 100%, #83d8b8);
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+/* Dark mode variables */
+.home-page.dark-mode {
+  --card-bg: rgba(30, 30, 30, 0.9);
+  --text-primary: #ffffff;
+  --bg-gradient: linear-gradient(135deg, rgb(42 3 33), #111432, #10073e);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-page {
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  position: relative;
+  transition: background 0.3s ease;
+}
+/* Loading and Error States */
+.loading,
+.error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+}
+
+.loading::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #ddd;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  background: rgba(255, 99, 71, 0.9);
+  color: white;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Filters Section */
+.filters {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pokemon Grid Enhancements */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  perspective: 1500px;
+}
+
+.pokemon-card {
+  transform-style: preserve-3d;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #123737, #6022a6);
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+
+.pokemon-card:hover {
+  transform: translateY(-8px) rotateX(5deg) rotateY(5deg) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card:hover::before {
+  opacity: 0.2;
+}
+
+/* Shine Effect */
+.pokemon-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 80%
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.pokemon-card:hover::after {
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 1.5rem;
+  }
+  
+  .filters {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .pokemon-card {
+    border-radius: 1rem;
+  }
+  
+  .loading,
+  .error {
+    width: 90%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+.home-page.dark-mode .pokemon-card {
+  border-color: var(--border-color);
+}
+
+.home-page.dark-mode .no-results {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+.home-page.dark-mode .loading {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.home-page.dark-mode .error {
+  background: rgba(255, 99, 71, 0.8);
+}
